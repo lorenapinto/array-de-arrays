@@ -1,0 +1,40 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#define MAX 20
+
+
+using namespace std;
+
+struct matV 
+{
+	int subvector[MAX];
+};
+
+void cargar_matdevec (matV A[MAX][MAX], int fil, int col, int n);
+
+void main()
+{
+	int fil,col,n;
+	matV A[MAX][MAX];
+
+	cout<<"Ingrese el numero de filas de la matriz externa: ";
+	cin>>fil;
+	cout<<"Ingrese el numero de columnas de la matriz externa: ";
+	cin>>col;
+	cout<<"Ingrese el tamanho del vector interno: ";
+	cin>>n;
+	cargar_matdevec (A,fil,col,n);
+	getch();
+}
+
+void cargar_matdevec (matV A[MAX][MAX], int fil, int col, int n)
+{
+	for (int i=0; i<fil; i++)
+		for (int j=0; j<col; j++)
+			for (int k=0; k<n; k++)
+			{
+				cout<<"A["<<i<<"]["<<j<<"].subvector["<<k<<"]= ";
+				cin>>A[i][j].subvector[k];
+			}
+}

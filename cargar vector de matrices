@@ -1,0 +1,41 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#define MAX 20
+
+
+using namespace std;
+
+struct vecM 
+{
+	int submatriz [MAX][MAX];
+};
+
+void cargar_vecdemat (vecM A[], int fil, int col, int n);
+
+void main()
+{
+	vecM A[MAX];
+	int fil, col, n;
+
+	cout<<"Ingrese el tamanho del vector externo: ";
+	cin>>n;
+	cout<<"Ingrese las filas de la matriz interna: ";
+	cin>>fil;
+	cout<<"Ingrese las columnas de la matriz interna: ";
+	cin>>col;
+	cargar_vecdemat (A,fil,col,n);
+	getch();
+
+}
+
+void cargar_vecdemat (vecM A[], int fil, int col, int n)
+{
+	for (int i=0; i<n; i++)
+		for (int j=0; j<fil; j++)
+			for (int k=0; k<col; k++)
+			{
+				cout<<"A["<<i<<"].submatriz["<<j<<"]["<<k<<"]= ";
+				cin>>A[i].submatriz[j][k];
+			}
+}

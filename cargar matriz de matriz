@@ -1,0 +1,45 @@
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#define MAX 20
+
+
+using namespace std;
+
+struct matM
+{
+	int submatriz [MAX][MAX];
+};
+
+void cargar_matdemat (matM A[MAX][MAX], int fil1, int col1, int fil2, int col2);
+
+void main()
+{
+	matM A[MAX][MAX];
+	int fil1, col1, fil2, col2;
+
+	cout<<"Ingrese el numero de filas de la matriz externa: ";
+	cin>>fil1;
+	cout<<"Ingrese el numero de columnas de la matriz externa: ";
+	cin>>col1;
+	cout<<"Ingrese el numero de filas de la matriz interna: ";
+	cin>>fil2;
+	cout<<"Ingrese el numero de columnas de la matriz interna: ";
+	cin>>col2;
+	cargar_matdemat (A,fil1,col1,fil2,col2);
+	getch();
+}
+
+void cargar_matdemat (matM A[MAX][MAX], int fil1, int col1, int fil2, int col2)
+{
+	for (int i=0; i<fil1; i++)
+		for (int j=0; j<col1; j++)
+			for (int k=0; k<fil2; k++)
+				for (int l=0; l<col2; l++)
+				{
+					cout<<"A["<<i<<"]["<<j<<"].submatriz["<<k<<"]["<<l<<"]= ";
+					cin>>A[i][j].submatriz[k][l];
+				}
+}
+
